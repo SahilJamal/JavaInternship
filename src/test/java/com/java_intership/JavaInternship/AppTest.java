@@ -15,6 +15,7 @@ public class AppTest
      *
      * @param testName name of the test case
      */
+	
     public AppTest( String testName )
     {
         super( testName );
@@ -25,6 +26,9 @@ public class AppTest
      */
     public static Test suite()
     {
+    	App app = new App();
+    	app.getdata("Mumbai");
+    	
         return new TestSuite( AppTest.class );
     }
 

@@ -18,10 +18,9 @@ public class App
 	
 	private static final String API_KEY = "142cf43e95f6f0839c9e984cf674dd96"; 
 
-	public static void main( String[] args )
-    {
+	public void getdata(String city) {
         
-        double temp = getWheactherData("Mumbai", API_KEY);
+        double temp = getWheactherData(city, API_KEY);
         
         if(temp > 20) {
 			
