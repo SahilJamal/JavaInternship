@@ -5,23 +5,18 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class App 
 {
 	
-	private String cityName;
+	private static final Logger logger = LoggerFactory.getLogger(App.class);
 	
 	private static final String API_KEY = "142cf43e95f6f0839c9e984cf674dd96"; 
-	
-    public String getCityName() {
-		return cityName;
-	}
-
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
-	}
 
 	public static void main( String[] args )
     {
@@ -29,12 +24,12 @@ public class App
         double temp = getWheactherData("Mumbai", API_KEY);
         
         if(temp > 20) {
-        	
-        	System.out.println("Deployment is done because temp is greater than 20");
+			
+        	logger.info("Deployment is done because temp is greater than 20");
         	
         	//Deployment logic
         }else {
-        	System.out.println("Deployment is not done because temp is less than 20");
+        	logger.info("Deployment is not done because temp is less than 20");
         }
         
     }
